@@ -1,0 +1,25 @@
+.event-image{
+  width: 90%;
+  height: 370px;
+  box-shadow: 10px 5px 5px
+}
+.location-icon{
+  height: 37px;
+  width: 7%;
+}
+.event-description{
+  margin-top: 3%;
+}
+.event-date{
+  border: solid black 1px;
+}
+.descritpion-title{
+  margin: 4%;
+}
+.event-info{
+margin-top: 7%;
+
+}
+
+.shadow{
+}

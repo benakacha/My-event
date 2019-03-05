@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row" style="margin-top: 4%;">
+    <div class="col-12">
+
+
+    </div>
+    <div class="col-md-4 image-unique-event">
+      <h4>{{event.name.text}}</h4>
+      <img class="event-image" [src]="event.logo.original.url">
+
+    </div>
+    <div class="col-md-4 event-info">
+      <div class="row">
+        <h4 >Date: <span>{{event.start.local}}</span></h4>  <img class="location-icon" src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-512.png"  alt="">
+        </div>
+      <div class="row">
+      <h4>Lieu: <span>{{event.start.timezone}} </span></h4> <img  class="location-icon" src="https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/67-512.png"  alt="">
+      </div>
+        <button class="btn btn-primary shadow"> Organiser un Évenement </button>
+    </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <h3 class="descritpion-title">Descritpion de l'event</h3>
+    <p class="event-description">{{ event.description.text }}</p>
+  </div>
+

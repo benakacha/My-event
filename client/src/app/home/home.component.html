@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+    <h1 class="home-title">Event a venir</h1>
+    </div>
+    <div class=" col-3">
+      <div class="form-row event-list">
+        <label class="control-label" >Category</label>
+
+        <select class="form-control row" [(ngModel)]="selectedCategory.category_id" name="category_id">
+          <option *ngFor="let data of categories" name="optionCat" [value]="data.id">
+            {{ data.name }}
+          </option>
+        </select>
+
+
+      <label class="control-label" >Lieu :</label>
+      <input   class="form-control row" [(ngModel)]="nameFilter.start.timezone" [value]="nameFilter.start.timezone" type="text" name="name"  placeholder="Default input" id="inputDefault">
+
+      <a type="button" class="btn btn-primary btn-sm">Recherche de l'evenement</a>
+    </div>
+    </div>
+
+    <div  class="col-md-9">
+      <div *ngFor="let data of events | filterBy: nameFilter | filterBy: selectedCategory"  class="form-row event--list"  >
+        <div *ngIf="(events | filterBy: nameFilter).length === 0">
+        <p>  No matching elements</p>
+        </div>
+        <div class="col-6">
+      <img class="event-pic" [src]="data.logo !== null ? data.logo.original.url : false ">
+        </div>
+        <div class="col-6">
+      <h5 class="card-title">{{ data.name.text  | uppercase }}</h5>
+          <h6 class="card-title"> {{ data.start.timezone }} </h6>
+          <p class="lead text-left">{{ data.description.text | slice: 0:100  }}<a href="" ><strong>...en savoir plus</strong></a></p>
+      <a routerLink="/events/{{ data.id }}" type="button" class="btn btn-primary btn-lg">Reserver votre place</a>
+
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
